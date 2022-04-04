@@ -13,6 +13,7 @@
 		3FBACC4A27FBA427008D44B0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FBACC4927FBA427008D44B0 /* Preview Assets.xcassets */; };
 		3FBACC4C27FBA427008D44B0 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBACC4B27FBA427008D44B0 /* Persistence.swift */; };
 		3FBACC4F27FBA427008D44B0 /* SpendingTracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3FBACC4D27FBA427008D44B0 /* SpendingTracker.xcdatamodeld */; };
+		3FBACC5727FBA591008D44B0 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBACC5627FBA591008D44B0 /* MainView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		3FBACC4927FBA427008D44B0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3FBACC4B27FBA427008D44B0 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		3FBACC4E27FBA427008D44B0 /* SpendingTracker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SpendingTracker.xcdatamodel; sourceTree = "<group>"; };
+		3FBACC5627FBA591008D44B0 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +57,7 @@
 		3FBACC4127FBA421008D44B0 /* SpendingTracker */ = {
 			isa = PBXGroup;
 			children = (
+				3FBACC5527FBA585008D44B0 /* Main */,
 				3FBACC4227FBA421008D44B0 /* SpendingTrackerApp.swift */,
 				3FBACC4427FBA421008D44B0 /* ContentView.swift */,
 				3FBACC4627FBA427008D44B0 /* Assets.xcassets */,
@@ -71,6 +74,14 @@
 				3FBACC4927FBA427008D44B0 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		3FBACC5527FBA585008D44B0 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				3FBACC5627FBA591008D44B0 /* MainView.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -102,6 +113,7 @@
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1330;
 				LastUpgradeCheck = 1330;
+				ORGANIZATIONNAME = "Volkan Kuday";
 				TargetAttributes = {
 					3FBACC3E27FBA421008D44B0 = {
 						CreatedOnToolsVersion = 13.3;
@@ -146,6 +158,7 @@
 				3FBACC4F27FBA427008D44B0 /* SpendingTracker.xcdatamodeld in Sources */,
 				3FBACC4C27FBA427008D44B0 /* Persistence.swift in Sources */,
 				3FBACC4527FBA421008D44B0 /* ContentView.swift in Sources */,
+				3FBACC5727FBA591008D44B0 /* MainView.swift in Sources */,
 				3FBACC4327FBA421008D44B0 /* SpendingTrackerApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

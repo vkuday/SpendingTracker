@@ -2,7 +2,7 @@
 //  SpendingTrackerApp.swift
 //  SpendingTracker
 //
-//  Created by yupana on 4/4/22.
+//  Created by volkan on 4/4/22.
 //
 
 import SwiftUI
