@@ -2,13 +2,15 @@
 //  MainView.swift
 //  SpendingTracker
 //
-//  Created by yupana on 4/4/22.
 //  Copyright © 2022 Volkan Kuday. All rights reserved.
 //
 
 import SwiftUI
 
 struct MainView: View {
+    
+    @State private var shouldPresentAddCardForm = false
+    
     var body: some View {
         NavigationView {
             ScrollView {
@@ -22,6 +24,11 @@ struct MainView: View {
                 .tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))
                 .frame(height: 280)
                 .indexViewStyle(.page(backgroundDisplayMode: .always))
+                
+                Spacer()
+                    .fullScreenCover(isPresented: $shouldPresentAddCardForm, onDismiss: nil) {
+                        AddCardForm()
+                    }
                 
             }
             .navigationTitle("Credit Cards")
@@ -69,7 +76,7 @@ struct MainView: View {
     
     var addCardButton: some View {
         Button(action: {
-            
+            shouldPresentAddCardForm.toggle()
         }, label: {
             Text("+ Card")
                 .foregroundColor(.white)
@@ -84,5 +91,6 @@ struct MainView: View {
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
         MainView()
+//        AddCardForm()
     }
 }
