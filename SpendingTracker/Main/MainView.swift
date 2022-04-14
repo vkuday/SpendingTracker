@@ -25,7 +25,7 @@ struct MainView: View {
                 if !cards.isEmpty {
                     TabView {
                         ForEach(cards) { card in
-                            CreditCardView()
+                            CreditCardView(card: card)
                                 .padding(.bottom, 50)
                         }
                     }
@@ -84,9 +84,12 @@ struct MainView: View {
     }
     
     struct CreditCardView: View {
+        
+        let card: Card
+        
         var body: some View {
             VStack(alignment: .leading, spacing: 16) {
-                Text("Apple Visa Card")
+                Text(card.name ?? "")
                     .font(.system(size: 24, weight: .semibold))
                 
                 HStack {
@@ -100,9 +103,9 @@ struct MainView: View {
                         .font(.system(size: 18, weight: .semibold))
                 }
                 
-                Text("1234 1234 1234 1234")
+                Text(card.number ?? "")
                 
-                Text("Credit Limit: $50,000")
+                Text("Credit Limit: $\(card.limit)")
                 
                 HStack {
                     Spacer()
@@ -110,7 +113,13 @@ struct MainView: View {
             }
             .foregroundColor(.white)
             .padding()
-            .background(LinearGradient(colors: [Color.blue.opacity(0.5), Color.blue], startPoint: .center, endPoint: .bottom))
+            .background(VStack {
+                if let colorData = card.color, let uiColor = UIColor.color(data: colorData), let actualColor = Color(uiColor) {
+                    LinearGradient(colors: [actualColor.opacity(0.6), actualColor], startPoint: .center, endPoint: .bottom)
+                } else {
+                    Color.cyan
+                }
+            })
             .overlay(RoundedRectangle(cornerRadius: 8)
                 .stroke(Color.black.opacity(0.5), lineWidth: 1)
             )
