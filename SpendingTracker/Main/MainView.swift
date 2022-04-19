@@ -14,7 +14,7 @@ struct MainView: View {
     @Environment(\.managedObjectContext) private var viewContext
 
     @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
+        sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: false)],
         animation: .default)
     private var cards: FetchedResults<Card>
     
@@ -110,6 +110,9 @@ struct MainView: View {
         let card: Card
         
         @State private var shouldShowActionSheet = false
+        @State private var shouldShowEditForm = false
+        
+        @State var refreshId = UUID()
         
         private func handleDelete() {
             let viewContext = PersistenceController.shared.container.viewContext
@@ -136,13 +139,15 @@ struct MainView: View {
                             .font(.system(size: 28, weight: .bold))
                     }
                     .actionSheet(isPresented: $shouldShowActionSheet) {
-                        .init(title: Text(self.card.name ?? ""), message: Text("Options"), buttons: [.destructive(Text("Delete Card"), action: handleDelete), .cancel()])
+                        .init(title: Text(self.card.name ?? ""), message: Text("Options"), buttons: [.default(Text("Edit"), action: {
+                            shouldShowEditForm.toggle()
+                        }), .destructive(Text("Delete Card"), action: handleDelete), .cancel()])
                     }
 
                 }
                 
                 HStack {
-                    Image("visa")
+                    Image(self.card.type?.lowercased() ?? "visa")
                         .resizable()
                         .scaledToFit()
                         .frame(height: 44)
@@ -154,10 +159,13 @@ struct MainView: View {
                 
                 Text(card.number ?? "")
                 
-                Text("Credit Limit: $\(card.limit)")
-                
                 HStack {
+                    Text("Credit Limit: $\(card.limit)")
                     Spacer()
+                    VStack(alignment: .trailing) {
+                        Text("Valid Thru")
+                        Text("\(String(format: "%02d", card.expMonth + 1))/\(card.expYear % 2000)")
+                    }
                 }
             }
             .foregroundColor(.white)
@@ -176,6 +184,11 @@ struct MainView: View {
             .shadow(radius: 5)
             .padding(.horizontal)
             .padding(.top, 8)
+            
+            
+            .fullScreenCover(isPresented: $shouldShowEditForm) {
+                AddCardForm(card: card)
+            }
         }
     }
     
