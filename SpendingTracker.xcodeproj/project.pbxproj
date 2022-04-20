@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F20B727280F81A7008CF8C8 /* AddTransactionForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F20B726280F81A7008CF8C8 /* AddTransactionForm.swift */; };
 		3FB5079F27FCE339007601FF /* AddCardForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB5079E27FCE339007601FF /* AddCardForm.swift */; };
 		3FBACC4327FBA421008D44B0 /* SpendingTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBACC4227FBA421008D44B0 /* SpendingTrackerApp.swift */; };
 		3FBACC4527FBA421008D44B0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBACC4427FBA421008D44B0 /* ContentView.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3F20B726280F81A7008CF8C8 /* AddTransactionForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionForm.swift; sourceTree = "<group>"; };
 		3FB5079E27FCE339007601FF /* AddCardForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardForm.swift; sourceTree = "<group>"; };
 		3FBACC3F27FBA421008D44B0 /* SpendingTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpendingTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FBACC4227FBA421008D44B0 /* SpendingTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingTrackerApp.swift; sourceTree = "<group>"; };
@@ -40,6 +42,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3F20B725280F818A008CF8C8 /* AddTransaction */ = {
+			isa = PBXGroup;
+			children = (
+				3F20B726280F81A7008CF8C8 /* AddTransactionForm.swift */,
+			);
+			path = AddTransaction;
+			sourceTree = "<group>";
+		};
 		3FB5079D27FCE328007601FF /* AddCard */ = {
 			isa = PBXGroup;
 			children = (
@@ -89,6 +99,7 @@
 		3FBACC5527FBA585008D44B0 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				3F20B725280F818A008CF8C8 /* AddTransaction */,
 				3FB5079D27FCE328007601FF /* AddCard */,
 				3FBACC5627FBA591008D44B0 /* MainView.swift */,
 			);
@@ -169,6 +180,7 @@
 				3FBACC4F27FBA427008D44B0 /* SpendingTracker.xcdatamodeld in Sources */,
 				3FBACC4C27FBA427008D44B0 /* Persistence.swift in Sources */,
 				3FB5079F27FCE339007601FF /* AddCardForm.swift in Sources */,
+				3F20B727280F81A7008CF8C8 /* AddTransactionForm.swift in Sources */,
 				3FBACC4527FBA421008D44B0 /* ContentView.swift in Sources */,
 				3FBACC5727FBA591008D44B0 /* MainView.swift in Sources */,
 				3FBACC4327FBA421008D44B0 /* SpendingTrackerApp.swift in Sources */,
